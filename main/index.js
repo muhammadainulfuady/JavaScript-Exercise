@@ -5,10 +5,15 @@
 // let finish = result1 + result2;
 // console.log(finish);
 
-function volumeKubus(a, b) {
-  return (a ** b) + (b ** b);
-}
+const volumeKubus = function (a, b) {
+  return a ** b + b ** b;
+};
 console.log(volumeKubus(8, 3));
+
+const kurang = function (a, b) {
+  return a - b;
+};
+console.log(kurang(78, 180));
 
 // const volumeKubus = (a, b) => a * b + a * b;
 // console.log(volumeKubus(10, 10));

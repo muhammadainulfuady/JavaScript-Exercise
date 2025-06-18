@@ -1,11 +1,21 @@
-// const ar = function (a) {
-//   for (let i = 0; i < a.length; i++) {
-//     console.log(` Index ke-${i} : ${a[i]}`);
-//   }
-// };
-
-// const ind = [1, 2, 3, 4, 5];
-// ar(ind);
-
-let arr = [1, 2, 3, 4, 5, [2, 4, 5, 6,]]
-console.log(arr[5][2])
+let i = 0;
+let user = parseInt(prompt("Mau berapa kali loop ? "));
+let genap = [];
+let real = [];
+let total = 0;
+while (i < user) {
+  let user2 = parseInt(prompt(`Masukkan list ke-${i + 1}`));
+  real.push(user2);
+  if (user2 % 2 == 0) {
+    genap.push(user2);
+  }
+  total += user2;
+  i++;
+}
+console.log("Array yang masuk:");
+console.log(real);
+console.log("\nAngka genap:");
+genap.forEach(function (angka) {
+  console.log(`${angka}`);
+});
+console.log(`Jumlah total \n${total}`);

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Kuadran</title>
+    <style>
+      body {
+        text-align: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #info {
+        margin-top: 50px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gerakkan Mouse untuk lihat Kuadran</h1>
+    <div id="info">Posisi: -</div>
+
+    <script>
+      const info = document.getElementById("info");
+
+      window.addEventListener("mousemove", function (event) {
+        const tengahX = window.innerWidth / 2;
+        const tengahY = window.innerHeight / 2;
+
+        const posX = event.clientX;
+        const posY = event.clientY;
+
+        let kuadran = "";
+
+        if (posX < tengahX && posY < tengahY) {
+          kuadran = "Kuadran I (Kiri - Atas)";
+        } else if (posX >= tengahX && posY < tengahY) {
+          kuadran = "Kuadran II (Kanan - Atas)";
+        } else if (posX < tengahX && posY >= tengahY) {
+          kuadran = "Kuadran III (Kiri - Bawah)";
+        } else {
+          kuadran = "Kuadran IV (Kanan - Bawah)";
+        }
+
+        info.textContent = `Posisi Mouse: (${posX}, ${posY}) → ${kuadran}`;
+      });
+    </script>
+  </body>
+</html>
